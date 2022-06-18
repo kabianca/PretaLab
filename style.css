@@ -1,0 +1,156 @@
+body {
+    color: #3c3c3c;
+    font: 300 14px open sans,sans-serif;
+    letter-spacing: 0.5px;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #232323;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1 {
+    font: 900 24px/36px "Titillium Web",serif;
+    margin: 0 0 15px;
+}
+
+h2 {
+    font: 200 38px "Titillium Web",serif;
+}
+  
+h3 {
+    font: 900 16px "Titillium Web",serif;
+    letter-spacing: 1.5px;
+}
+
+.corpo {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1170px;
+    
+}
+
+/* Elementos da Sidebar */
+.sidebar {
+    float: left;
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: #287194;
+    overflow-x: hidden;
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.img_perfil {
+    border-radius: 50%;
+}
+
+.desc {
+    color:white;
+  }
+  
+.icone_lateral {
+    width: 1.28571429em;
+    text-align: center;
+    display: inline-block;
+    margin-right: 16px;
+    white-space: normal;
+    cursor: pointer;
+    color: #000;
+}
+  
+.btn_lateral_port {
+    width: 100%;
+    display: block;
+    text-align: left;
+    color: #f49f0a;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+  
+.btn_lateral {
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #000;
+}
+  
+.btn_lateral:hover, .btn_lateral_port:hover {
+    color:#000;
+    background-color:#f49f0a;
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+/* Final da Sidebar */
+
+.corpo-principal {
+    float: right;
+    margin-left: 300px; /* balancear com a largura da sidebar */
+    padding: 10px 10px;
+    width: 70%;
+}
+
+.titulo-secao span {
+    color: #969696;
+    font: 500 14px open sans,sans-serif;
+    padding-right: 10px;
+}
+
+/* linha no título da seção */
+.titulo-secao h2::after {
+    background: #f49f0a;
+    content: "";
+    display: table;
+    height: 2px;
+    left: 28px;
+    position:relative;
+    width: 40px;
+}
+
+/* Sessão about */
+
+.highlight {
+    background: #463F3A;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: unset;
+    line-height: 58px;
+    padding: 0 12px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+/* Ícones da Seção Formação */
+
+.fa-2x {margin-right: 20px;color:#463F3A;opacity: 0.5;}
+
+/* Efeito no link da formação */
+
+.resume-box h5:hover {
+  text-shadow:3px 3px 3px gray;
+}
