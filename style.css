@@ -56,7 +56,11 @@ h3 {
     color:white;
   }
   
+<<<<<<< HEAD
 /*.icone_lateral {
+=======
+.icone_lateral {
+>>>>>>> a94186dce7b16637315109fd5444466fd5bc4c13
     width: 1.28571429em;
     text-align: center;
     display: inline-block;
@@ -64,28 +68,45 @@ h3 {
     white-space: normal;
     cursor: pointer;
     color: #000;
+<<<<<<< HEAD
 }*/
+=======
+}
+>>>>>>> a94186dce7b16637315109fd5444466fd5bc4c13
   
 .btn_lateral_port {
     width: 100%;
     display: block;
+<<<<<<< HEAD
     text-align: center;
     color: #f49f0a;
     font-weight: 700;
     padding-bottom: 12px;
     padding-top: 12px;
+=======
+    text-align: left;
+    color: #f49f0a;
+    padding: 8px 16px;
+>>>>>>> a94186dce7b16637315109fd5444466fd5bc4c13
     text-decoration: none;
 }
   
 .btn_lateral {
     width: 100%;
     display: block;
+<<<<<<< HEAD
     text-align: center;
     text-decoration: none;
     padding-bottom: 12px;
     padding-top: 12px;
     color: #000;
     font-weight: 700;
+=======
+    text-align: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #000;
+>>>>>>> a94186dce7b16637315109fd5444466fd5bc4c13
 }
   
 .btn_lateral:hover, .btn_lateral_port:hover {
