@@ -148,3 +148,31 @@ h3 {
 .resume-box h5:hover {
   text-shadow:3px 3px 3px gray;
 }
+
+.formulario {
+    padding:8px;
+    display:block;
+    width:100%;
+    padding-top:16px;
+    padding-bottom:16px;
+    border:1px solid #ccc;
+}
+
+.botao-enviar {
+    border:none;
+    display:inline-block;
+    padding:8px 16px;
+    vertical-align:middle;
+    overflow:hidden;
+    color:inherit;
+    background-color:#f49f0a;
+    text-align:center;
+    cursor:pointer;
+    white-space:nowrap;
+}
+
+.botao-enviar:hover {
+    color:#000;
+    background-color:#ccc;
+}
+
