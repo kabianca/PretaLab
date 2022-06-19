@@ -1,32 +1,76 @@
 <?php
-$field_name = $_POST['nome'];
-$field_email = $_POST['email'];
-$field_message = $_POST['mensagem'];
+if (isset($_POST['email'])) {
 
-$mail_to = 'kbiancasol@gmail.com';
-$subject = 'Message from a site visitor '.$field_nome;
+    // EDIT THE 2 LINES BELOW AS REQUIRED
+    $email_to = "kbiancasol@gmail.com";
+    $email_subject = "Contato no portfólio";
 
-$body_message = 'From: '.$field_nome."\n";
-$body_message .= 'E-mail: '.$field_email."\n";
-$body_message .= 'Message: '.$field_mensagem;
+    function problem($error)
+    {
+        echo "Sinto muito, mas foram encontrado(s) erro(s) na mensagem submetida. ";
+        echo "Existem os seguintes erros abaixo.<br><br>";
+        echo $error . "<br><br>";
+        echo "Por favor, volte e corrija os erros.<br><br>";
+        die();
+    }
 
-$headers = 'From: '.$field_email."\r\n";
-$headers .= 'Reply-To: '.$field_email."\r\n";
+    // validation expected data exists
+    if (
+        !isset($_POST['nome']) ||
+        !isset($_POST['email']) ||
+        !isset($_POST['mensagem'])
+    ) {
+        problem('Sinto muito, mas há algum problema com a mensagem submetida.');
+    }
 
-$mail_status = mail($mail_to, $subject, $body_message, $headers);
+    $name = $_POST['nome']; // required
+    $email = $_POST['email']; // required
+    $message = $_POST['mensagem']; // required
 
-if ($mail_status) { ?>
-	<script language="javascript" type="text/javascript">
-		alert('Grata pela mensagem. Entrarei em contato o mais rápido possível.');
-		window.location = 'index.html';
-	</script>
-<?php
-}
-else { ?>
-	<script language="javascript" type="text/javascript">
-		alert('A mensagem falhou. Por favor, envie um e-mail para kbiancasol@gmail.com');
-		window.location = 'index.html';
-	</script>
+    $error_message = "";
+    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+
+    if (!preg_match($email_exp, $email)) {
+        $error_message .= 'O endereço de e-mail que você inseriu não é válido.<br>';
+    }
+
+    $string_exp = "/^[A-Za-z .'-]+$/";
+
+    if (!preg_match($string_exp, $name)) {
+        $error_message .= 'O nome que você inseriu não é válido.<br>';
+    }
+
+    if (strlen($message) < 2) {
+        $error_message .= 'A mensagem que você inseriu não é válida.<br>';
+    }
+
+    if (strlen($error_message) > 0) {
+        problem($error_message);
+    }
+
+    $email_message = "Detalhes do formulário abaixo.\n\n";
+
+    function clean_string($string)
+    {
+        $bad = array("content-type", "bcc:", "to:", "cc:", "href");
+        return str_replace($bad, "", $string);
+    }
+
+    $email_message .= "Nome: " . clean_string($nome) . "\n";
+    $email_message .= "E-mail: " . clean_string($email) . "\n";
+    $email_message .= "Mensagem: " . clean_string($mensagem) . "\n";
+
+    // create email headers
+    $headers = 'From: ' . $email . "\r\n" .
+        'Reply-To: ' . $email . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+    @mail($email_to, $email_subject, $email_message, $headers);
+?>
+
+    <!-- include your success message below -->
+
+    Grata pela mensagem. Entrarei em contato o mais rápido possível.
+
 <?php
 }
 ?>
