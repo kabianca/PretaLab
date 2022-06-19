@@ -18,14 +18,14 @@ $mail_status = mail($mail_to, $subject, $body_message, $headers);
 if ($mail_status) { ?>
 	<script language="javascript" type="text/javascript">
 		alert('Grata pela mensagem. Entrarei em contato o mais rápido possível.');
-		window.location = 'contact_page.html';
+		window.location = 'index.html';
 	</script>
 <?php
 }
 else { ?>
 	<script language="javascript" type="text/javascript">
-		alert('Message failed. Please, send an email to gordon@template-help.com');
-		window.location = 'contact_page.html';
+		alert('A mensagem falhou. Por favor, envie um e-mail para kbiancasol@gmail.com');
+		window.location = 'index.html';
 	</script>
 <?php
 }
